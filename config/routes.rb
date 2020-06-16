@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
-  root to: 'pages#home'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  devise_for :users
+  root to: 'ships#home'
+    resources :ships do
+      resources :bookings, only: [:index, :create]
+    end
+    resources :users, only: [] do
+      collection do
+        get :ships
+      end
+    end
 end
