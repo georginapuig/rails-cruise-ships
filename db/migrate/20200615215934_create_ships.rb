@@ -5,7 +5,7 @@ class CreateShips < ActiveRecord::Migration[6.0]
       t.integer :capacity
       t.text :description
       t.string :destination
-      t.references :users, null: false, foreign_key: true
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end
