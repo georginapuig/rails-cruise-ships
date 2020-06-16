@@ -1,15 +1,15 @@
-new.html.erb
+
 
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-8">
-      <h2>Add a new ship</h2>
+      <h2>Add a New Ship</h2>
 
       <%= simple_form_for @ship do |f| %>
         <%= f.input :name %>
-        <%= f.input :photo %>
-        <%= f.input :photo_cache, as: :hidden %>
+        <%= f.input :photo, as: :file %>
         <%= f.input :capacity %>
+        <%= f.input :location %>
         <%= f.input :destination %>
         <%= f.input :description %>
         <%= f.button :submit, class: 'btn btn-primary' %>
