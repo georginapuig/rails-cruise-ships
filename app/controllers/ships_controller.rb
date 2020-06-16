@@ -11,6 +11,7 @@ class ShipsController < ApplicationController
 
   def create
     @ship = Ship.new(ship_params)
+    @ship.user = current_user
     if ship.save
       redirect_to ship_path(@ship)
     else
