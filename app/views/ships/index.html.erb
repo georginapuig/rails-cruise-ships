@@ -7,13 +7,15 @@
           <% if ship.photo.attached? %>
             <%= cl_image_tag ship.photo.key %>
           <% end %>
+
           <div class="card-trip-infos">
-          <div>
-            <h2> <%= ship.name %></h2>
-            <p><%= ship.location %></p>
+            <div>
+              <h2><%= ship.name %></h2>
+              <p><%= ship.location %></p>
+            </div>
+            <h2 class="card-trip-pricing"><%= ship.destination %></h2>
           </div>
-          <h2 class="card-trip-pricing"><%= ship.destination %></h2>
-        </div>
+
         </div>
       <% end %>
     <% end %>
