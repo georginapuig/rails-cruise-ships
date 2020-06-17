@@ -35,6 +35,10 @@ class ShipsController < ApplicationController
     redirect_to root_path
   end
 
+  def my_ships
+    @ships = current_user.ships
+  end
+
   private
 
   def set_ship

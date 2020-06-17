@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-    resources :ships do
-      resources :bookings, only: [:index, :create]
+  resources :ships do
+    collection do
+     get "my_ships"
     end
-    resources :users, only: [] do
-      collection do
-        get :ships
-      end
-    end
+    resources :bookings, only: [:index, :create]
+  end
 end
