@@ -1,0 +1,6 @@
+<h1>Ships#index</h1>
+<% @ships.each do |ship| %>
+	<h2><%= ship.name %></h2>
+	<p><%= ship.capacity %></p>
+	<p><%= ship.description %></p>
+<% end %>
