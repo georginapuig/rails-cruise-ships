@@ -52,11 +52,11 @@ ActiveRecord::Schema.define(version: 2020_06_16_221348) do
     t.integer "capacity"
     t.text "description"
     t.string "destination"
-    t.bigint "users_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "location"
-    t.index ["users_id"], name: "index_ships_on_users_id"
+    t.index ["user_id"], name: "index_ships_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -74,5 +74,5 @@ ActiveRecord::Schema.define(version: 2020_06_16_221348) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookings", "ships", column: "ships_id"
   add_foreign_key "bookings", "users", column: "users_id"
-  add_foreign_key "ships", "users", column: "users_id"
+  add_foreign_key "ships", "users"
 end
