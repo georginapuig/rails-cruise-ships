@@ -1,0 +1,24 @@
+.form {
+  background-color: white;
+  font-family: 'Nunito';
+  padding: 50px;
+  margin: 40px auto;
+  color: rgba(0, 0, 0, 0.5);
+  border-radius: 2px;
+}
+
+// button
+.form-actions {
+  padding: 4px;
+  background-color: #6a93c2;
+  text-align: center;
+  color: white;
+  border-radius: 2px;
+}
+
+.form-links {
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  color: #6a93c2;
+}

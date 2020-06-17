@@ -1,19 +1,16 @@
+<div class="container pt-5 col-md-5 form">
+  <h2 class="text-center">Add a New Ship</h2>
 
+  <%= simple_form_for @ship do |f| %>
+    <%= f.input :name %>
+    <%= f.input :photo, as: :file %>
+    <%= f.input :capacity %>
+    <%= f.input :location %>
+    <%= f.input :destination %>
+    <%= f.input :description %>
 
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-8">
-      <h2>Add a New Ship</h2>
-
-      <%= simple_form_for @ship do |f| %>
-        <%= f.input :name %>
-        <%= f.input :photo, as: :file %>
-        <%= f.input :capacity %>
-        <%= f.input :location %>
-        <%= f.input :destination %>
-        <%= f.input :description %>
-        <%= f.button :submit, class: 'btn btn-primary' %>
-      <% end %>
+    <div class="form-actions">
+      <%= f.button :submit, "Create ship", class: "text-white" %>
     </div>
-  </div>
+  <% end %>
 </div>
