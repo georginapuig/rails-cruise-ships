@@ -1,1 +1,18 @@
-<h2>Index page</h2>
+
+<div class="container pt-4 pb-5">
+  <h2>Choose your party boat!</h2>
+  <div class="cards d-flex">
+    <% @ships.each do |ship| %>
+      <div class="card-trip mt-4">
+       <%= cl_image_tag ship.photo.key %>
+        <div class="card-trip-infos">
+         <div>
+          <h2> <%= ship.name %></h2>
+          <p><%= ship.location %></p>
+         </div>
+         <h2 class="card-trip-pricing"><%= ship.destination %></h2>
+       </div>
+      </div>
+    <% end %>
+  </div>
+</div>
