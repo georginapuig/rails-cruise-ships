@@ -2,7 +2,7 @@ class BookingsController < ApplicationController
   before_action :set_ship, only: [:new, :create]
 
   def index
-    @bookings = Booking.all
+    @bookings = Booking.all.where(user_id: current_user.id)
   end
 
   def create
@@ -12,6 +12,7 @@ class BookingsController < ApplicationController
       redirect_to ship_bookings_path(@ship)
     else
       render :new
+    end
   end
 
   private
