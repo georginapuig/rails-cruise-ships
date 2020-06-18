@@ -8,6 +8,8 @@
 
 # borrar los datos
 require "open-uri"
+require "faker"
+
 Booking.destroy_all
 Ship.destroy_all
 User.destroy_all
@@ -35,7 +37,7 @@ photos = [
 	ship = Ship.create!(
 		name: Faker::Name.unique.name,
 		capacity: Faker::Vehicle.engine_size,
-		description: Faker::Vehicle.standard_specs,
+		description: Faker::Vehicle.standard_specs.sample,
 		destination: Faker::Address.city,
 		user: user1,
 		location: Faker::Address.city,
