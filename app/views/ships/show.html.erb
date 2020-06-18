@@ -1,5 +1,5 @@
 <div class="banner img-banner" style="background-image:
-  linear-gradient(rgba(0,0,0,0.50),rgba(0,0,0,0.50)), 
+  linear-gradient(rgba(0,0,0,0.50),rgba(0,0,0,0.50)),
   url('<%= cl_image_path @ship.photo.key %>');">
 
   <div class="container text-left pl-2">
@@ -7,11 +7,10 @@
     <p class="p-header text-white"><%= @ship.location %></p>
     <!-- card -->
     <div class="card-product card-banner">
-      <div class="card-product-infos card-text">
-        <h2 class="banner-h2 text-center">Great deal</h2>
-        <button class="card-text-button">Book now</button>
+      <div class="text-center">
+        <%= render "shared/new_booking" %>
       </div>
-    </div>  
+    </div>
   </div>
 </div>
 

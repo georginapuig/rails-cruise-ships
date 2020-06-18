@@ -2,7 +2,14 @@ class ShipsController < ApplicationController
   before_action :set_ship, only: [:show, :edit, :update, :destroy]
 
   def index
-    @ships = Ship.all
+    @ships = Ship.geocoded # returns ships with coordinates
+
+    @markers = @ships.map do |ship|
+      {
+        lat: ship.latitude,
+        lng: ship.longitude
+      }
+    end
   end
 
   def new
@@ -28,6 +35,7 @@ class ShipsController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
   end
 
   def destroy

@@ -1,3 +1,20 @@
-<% @ships.each do |ship| %>
-<p><%= ship.name %></p>
-<% end %>
+
+<div class="container pt-4 pb-5">
+  <h2>My Ships</h2>
+<br>
+<br>
+   <% @ships.each do |ship| %>
+    <div class="container">
+      <div class="row">
+        <p class="col-sm-4"><%= ship.name %></p>
+        <p class="col-sm-4">
+           <%= link_to "Edit", edit_ship_path(ship), class:"form-actions" %>
+        </p>
+        <p class="col-sm-4">
+           <%= link_to "Delete", ship_path(ship), class:"form-actions", method: :delete %>
+        </p>
+      </div>
+     </div>
+   <% end %>
+</div>
+
