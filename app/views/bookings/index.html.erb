@@ -1,2 +1,17 @@
-<% @bookings.each do %>
-<% end %>
+<div class="container">
+  <h2>My Bookings</h2>
+    <% @bookings.each do |booking| %>
+    <br>
+     <div class="row">
+       <div class="col">
+         <%= booking.ship.name %>
+       </div>
+       <div class="col">
+        <%= booking.start_date %>
+       </div>
+       <div class="col">
+        <%= booking.end_date %>
+       </div>
+     </div>
+    <% end %>
+</div>
