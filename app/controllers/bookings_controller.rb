@@ -8,10 +8,11 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.ship = @ship
+    @booking.user = current_user
     if @booking.save
       redirect_to ship_bookings_path(@ship)
     else
-      render :new
+      redirect_to ship_path(@ship)
     end
   end
 

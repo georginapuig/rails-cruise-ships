@@ -1,0 +1,9 @@
+<div class="text-center">
+  <%= simple_form_for([@ship, @booking]) do |f| %>
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
+    <div class="form-actions">
+      <%= f.button :submit, "Book a ship", class: "text-white" %>
+    </div>
+  <% end %>
+</div>

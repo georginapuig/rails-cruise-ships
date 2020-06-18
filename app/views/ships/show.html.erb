@@ -7,9 +7,8 @@
     <p class="p-header text-white"><%= @ship.location %></p>
     <!-- card -->
     <div class="card-product card-banner">
-      <div class="card-product-infos card-text">
-        <h2 class="banner-h2 text-center">Great deal</h2>
-        <%= link_to "Book now", ship_bookings_path(@ship), class: "card-text-button"  %>
+      <div class="text-center">
+        <%= render "shared/new_booking" %>
       </div>
     </div>
   </div>

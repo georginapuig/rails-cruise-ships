@@ -8,9 +8,11 @@
 
 # borrar los datos
 require "open-uri"
-
+Booking.destroy_all
 Ship.destroy_all
 User.destroy_all
+
+prices =[400, 450, 500, 550, 600, 700]
 
 user1 = User.create!(email: "benjaistheman@gmail.com", password: "12345678")
 
@@ -36,9 +38,10 @@ photos = [
 		description: Faker::Vehicle.standard_specs,
 		destination: Faker::Address.city,
 		user: user1,
-		location: Faker::Address.city
+		location: Faker::Address.city,
+    price: prices.sample
 		)
-		
+
 	file = URI.open(photos.sample)
 	ship.photo.attach(io: file, filename: 'nes.png')
 end
