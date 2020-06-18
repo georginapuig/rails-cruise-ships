@@ -1,11 +1,54 @@
-<div class="banner" style="background-image:linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)), url('https://images.unsplash.com/photo-1575389642176-2503f86989bd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80');">
+<div class="banner img-banner" style="background-image:
+  linear-gradient(rgba(0,0,0,0.50),rgba(0,0,0,0.50)), 
+  url('<%= cl_image_path @ship.photo.key %>');">
+
   <div class="container text-left pl-2">
-    <h1>My beautiful sea</h1>
-    <p class="text-white">Shark 24</p>
+    <h1><%= @ship.name %></h1>
+    <p class="p-header text-white"><%= @ship.location %></p>
+    <!-- card -->
+    <div class="card-product card-banner">
+      <div class="card-product-infos card-text">
+        <h2 class="banner-h2 text-center">Great deal</h2>
+        <button class="card-text-button">Book now</button>
+      </div>
+    </div>  
   </div>
 </div>
 
 <div class="container pt-4 pb-5">
-  <h2>Ship characteristics</h2>
+  <h2 class="pt-5 pb-2">Ship characteristics</h2>
+  <hr>
+  <div class="params pt-2">
+    <div class="description d-flex">
+      <i class="fa fa-info-circle" aria-hidden="true"></i>
+      <div class="pl-2">
+        <h3>Description</h3>
+        <p><%= @ship.description %></p>
+      </div>
+    </div>
 
+    <div class="capacity d-flex">
+      <i class="fa fa-users" aria-hidden="true"></i>
+      <div class="pl-2">
+        <h3>Capacity</h3>
+        <p><%= @ship.capacity %></p>
+      </div>
+    </div>
+
+    <div class="location d-flex">
+      <i class="fa fa-map-pin pr-2" aria-hidden="true"></i>
+      <div class="pl-2">
+        <h3>Location</h3>
+        <p><%= @ship.location %></p>
+      </div>
+    </div>
+
+    <div class="destination d-flex">
+      <i class="fa fa-location-arrow" aria-hidden="true"></i>
+      <div class="pl-2">
+        <h3>Destination</h3>
+        <p><%= @ship.destination %></p>
+      </div>
+    </div>
+  </div>
 </div>

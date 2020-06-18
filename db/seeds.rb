@@ -22,16 +22,14 @@ photos = [
 	"https://images.unsplash.com/photo-1579118330446-881d3052f036?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
 	"https://www.forensisgroup.com/wp-content/uploads/2015/04/Cruise-Ship.jpg",
 	"https://www.costacruise.com/B2C/ResourcesWebRevise/ships/subhome/mediterranea.jpg",
-	"https://i.ytimg.com/vi/ca-ughZdtnc/maxresdefault.jpg",
 	"https://images.unsplash.com/photo-1575389642176-2503f86989bd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
 	"https://images.unsplash.com/photo-1551287261-594c8fb5bce6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1502&q=80",
-	"https://www.cottonboats.com/wp-content/uploads/cotton-boats_photos_05.jpg",
-	"https://www.sailfishboats.com/wp-content/uploads/2018/01/documentation-photo-568x448.jpg",
-	"https://i.ytimg.com/vi/tciIScdB9ok/maxresdefault.jpg",
-	"https://xclusiveyachts.com/photo/yachts/26/2.jpg"
+	"https://images.unsplash.com/photo-1582647106380-7170319845b9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80",
+	"https://images.unsplash.com/photo-1567871017123-6a011b0dd9a2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
+	"https://images.unsplash.com/photo-1518650310565-c782d7ff666e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1502&q=80"
 ]
 
-20.times do
+21.times do
 	ship = Ship.create!(
 		name: Faker::Name.unique.name,
 		capacity: Faker::Vehicle.engine_size,
