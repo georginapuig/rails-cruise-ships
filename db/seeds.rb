@@ -8,6 +8,7 @@
 
 # borrar los datos
 require "open-uri"
+require "faker"
 
 Ship.destroy_all
 User.destroy_all
