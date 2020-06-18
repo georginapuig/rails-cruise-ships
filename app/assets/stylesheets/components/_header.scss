@@ -27,4 +27,9 @@
   color: white;
   font-weight: 600;
   border: none;
+  transition: .3s;
+}
+
+#header-submit-input:hover {
+  background-color: #779cc7;
 }
