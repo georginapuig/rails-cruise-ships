@@ -9,6 +9,7 @@ class ShipsController < ApplicationController
         lat: ship.latitude,
         lng: ship.longitude
       }
+    end
   end
 
   def new
