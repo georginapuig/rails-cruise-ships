@@ -33,7 +33,7 @@ photos = [
 	ship = Ship.create!(
 		name: Faker::Name.unique.name,
 		capacity: Faker::Vehicle.engine_size,
-		description: Faker::Vehicle.standard_specs,
+		description: Faker::Vehicle.standard_spec,
 		destination: Faker::Address.city,
 		user: user1,
 		location: Faker::Address.city
