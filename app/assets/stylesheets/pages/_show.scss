@@ -1,5 +1,6 @@
 .p-header {
-  font-size: 25px;
+  font-size: 27px;
+  font-family: 'Nunito';
   font-style: italic;
 }
 
@@ -8,32 +9,33 @@
 }
 
 .banner-h2 {
-  font-size: 28px;
+  font-size: 32px;
   text-align: center;
 }
 
+.card-text, 
+.card-banner {
+  width: 330px;
+  height: 280px;
+}
 .card-banner {
   position: absolute;
   top: 300px;
   right: 120px;
-  width: 300px;
-  height: 250px;
 }
 
 .card-text {
-  width: 300px;
-  height: 250px;
   text-align: center;
 }
 
 .card-text h2 {
-  font-size: 27px;
+  font-size: 30px;
   margin: 50px auto 30px;
 }
 
 .card-text-button {
   border: none;
-  padding: 20px 60px;
+  padding: 25px 65px;
   background-color: #6a93c2;
   color: white;
   font-weight: 600;
@@ -41,7 +43,7 @@
 }
 
 .card-text-button:hover {
-  background-color: #83a9d4;
+  background-color: #729ac7;
 }
 
 .card-product-img {
@@ -59,6 +61,8 @@
 }
 
 i {
+  position: relative;
+  top: 4px;
   color: #83a9d4;
 }
 
