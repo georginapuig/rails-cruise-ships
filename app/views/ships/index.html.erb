@@ -4,6 +4,7 @@
     <% @ships.each do |ship| %>
       <%= link_to ship_path(ship) do %>
         <div class="card-trip mt-4">
+          
           <% if ship.photo.attached? %>
             <%= cl_image_tag ship.photo.key %>
           <% end %>
