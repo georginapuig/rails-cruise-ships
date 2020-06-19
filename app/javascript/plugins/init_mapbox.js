@@ -18,9 +18,20 @@ const initMapbox = () => {
 
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
-      new mapboxgl.Marker()
+      const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // add this
+
+      // Create a HTML element for your custom marker
+      const element = document.createElement('div');
+      element.className = 'marker';
+      element.style.backgroundImage = `url('${marker.image_url}')`;
+      element.style.backgroundSize = 'contain';
+      element.style.width = '25px';
+      element.style.height = '25px';
+
+      new mapboxgl.Marker(element)
         .setLngLat([ marker.lng, marker.lat ])
-        .addTo(map);
+        .addTo(map)
+        .setPopup(popup); // add this
     });
     fitMapToMarkers(map, markers);
   }
