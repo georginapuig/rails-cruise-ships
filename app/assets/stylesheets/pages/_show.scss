@@ -34,3 +34,22 @@ i {
 .description {
   display: flex;
 }
+
+.show-submit-botton {
+  padding: 12px 213px;
+  transition: .3s;
+}
+
+.show-submit-botton:hover {
+  color: white;
+  background-color: #84acda;
+}
+
+.reviews-header {
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.reviews-count {
+  font-size: 19px;
+}

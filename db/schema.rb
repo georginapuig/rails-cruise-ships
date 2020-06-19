@@ -65,9 +65,9 @@ ActiveRecord::Schema.define(version: 2020_06_19_141347) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "location"
-    t.integer "price"
     t.float "latitude"
     t.float "longitude"
+    t.integer "price"
     t.index ["user_id"], name: "index_ships_on_user_id"
   end
 

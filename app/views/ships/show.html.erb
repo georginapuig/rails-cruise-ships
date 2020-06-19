@@ -17,7 +17,7 @@
 <div class="container pt-4 pb-5">
   <h2 class="pt-5 pb-2">Ship characteristics</h2>
   <hr>
-  <div class="d-flex">
+  <div class="d-flex mb-5">
     <div class="params pt-2">
       <div class="description d-flex">
         <i class="fa fa-info-circle" aria-hidden="true"></i>
@@ -73,26 +73,35 @@
     <% end %>
   </div>
 
-    <%= simple_form_for([ @ship, @review ], remote: true) do |f| %>
-       <%= f.label :Reviews, class: "h3"%>
-       <%= f.input :rating, collection: 1..5 %>
-       <%= f.input :content, as: :text, label: :Review%>
-       <%= f.button :submit, "Submit a review", class: "form-actions" %>
-
-    <% end %>
-    <h3>
-        <%= pluralize @ship.reviews.size, "review" %>
+  <div class="d-flex reviews-header">
+    <h3 class="reviews h3">Reviews</h3>
+    <h3 class="reviews-count">
+      <%= pluralize @ship.reviews.size, "review" %>
     </h3>
+  </div>
 
-    <div id="reviews">
-       <% if @ship.reviews.blank? %>
+  <hr>
+
+  <div class="d-flex">
+
+    <div class="col-6 pl-0">
+      <%= simple_form_for([ @ship, @review ], remote: true) do |f| %>
+         <%= f.input :rating, collection: 1..5 %>
+         <%= f.input :content, as: :text, label: :Review, class: "label-form" %>
+         <%= f.button :submit, "Submit a review", class: "form-actions show-submit-botton" %>
+      <% end %>
+    </div>
+  
+    <div class="" id="reviews">
+        <% if @ship.reviews.blank? %>
           Be the first to leave a review for <%= @ship.name %>
-       <% else %>
+        <% else %>
           <% @ship.reviews.each do |review| %>
             <p id="review-<%= review.id %>"><%= review.content %></p>
           <% end %>
-       <% end %>
+        <% end %>
     </div>
+  </div>
 </div>
 
 
