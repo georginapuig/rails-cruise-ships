@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     collection do
      get "my_ships"
     end
-  resources :bookings, only: [:index, :create]
-  resources :reviews, only: [:create]
+    resources :bookings, only: [:index, :create]
+    resources :reviews, only: [:create]
   end
 end

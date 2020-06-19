@@ -1,0 +1,17 @@
+<div class="container pt-5 col-md-5 form">
+  <h2 class="text-center">Update your information about <%= @ship.name %> "</h2>
+
+  <%= simple_form_for @ship do |f| %>
+    <%= f.input :name %>
+    <%= f.input :photo, as: :file %>
+    <%= f.input :capacity %>
+    <%= f.input :location %>
+    <%= f.input :destination %>
+    <%= f.input :description %>
+    <%= f.input :price, label: "Price (USD/ day)*" %>
+
+    <div class="form-actions">
+      <%= f.button :submit, "Update information", class: "text-white" %>
+    </div>
+  <% end %>
+</div>

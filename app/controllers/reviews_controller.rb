@@ -6,6 +6,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to ship_path(@ship, anchor: "review-#{@review.id}")
     else
+      @booking = Booking.new
       render 'ships/show'
     end
   end
