@@ -1,9 +1,14 @@
 import places from 'places.js';
 
 const initAutocomplete = () => {
-  const addressInput = document.getElementById('ship_location');
-  if (addressInput) {
-    places({ container: addressInput });
+  const locationInput = document.getElementById('ship_location');
+  if (locationInput) {
+    places({ container: locationInput });
+  }
+
+  const destinationInput = document.getElementById('ship_destination');
+  if (destinationInput) {
+    places({ container: destinationInput });
   }
 };
 
