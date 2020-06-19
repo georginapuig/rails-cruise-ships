@@ -17,49 +17,57 @@
 <div class="container pt-4 pb-5">
   <h2 class="pt-5 pb-2">Ship characteristics</h2>
   <hr>
-  <div class="params pt-2">
-    <div class="description d-flex">
-      <i class="fa fa-info-circle" aria-hidden="true"></i>
-      <div class="pl-2">
-        <h3>Description</h3>
-        <p><%= @ship.description %></p>
+  <div class="d-flex">
+    <div class="params pt-2">
+      <div class="description d-flex">
+        <i class="fa fa-info-circle" aria-hidden="true"></i>
+        <div class="pl-2">
+          <h3>Description</h3>
+          <p><%= @ship.description %></p>
+        </div>
+      </div>
+  
+      <div class="capacity d-flex">
+        <i class="fa fa-users" aria-hidden="true"></i>
+        <div class="pl-2">
+          <h3>Capacity</h3>
+          <p><%= @ship.capacity %></p>
+        </div>
+      </div>
+  
+      <div class="location d-flex">
+        <i class="fa fa-map-pin pr-2" aria-hidden="true"></i>
+        <div class="pl-2">
+          <h3>Location</h3>
+          <p><%= @ship.location %></p>
+        </div>
+      </div>
+  
+      <div class="destination d-flex">
+        <i class="fa fa-location-arrow" aria-hidden="true"></i>
+        <div class="pl-2">
+          <h3>Destination</h3>
+          <p><%= @ship.destination %></p>
+        </div>
+      </div>
+  
+      <div class="d-flex">
+        <i class="fa fa-id-card" aria-hidden="true"></i>
+        <div class="pl-2">
+          <h3>Price</h3>
+          <p>USD <%= @ship.price %></p>
+        </div>
       </div>
     </div>
-
-    <div class="capacity d-flex">
-      <i class="fa fa-users" aria-hidden="true"></i>
-      <div class="pl-2">
-        <h3>Capacity</h3>
-        <p><%= @ship.capacity %></p>
-      </div>
-    </div>
-
-    <div class="location d-flex">
-      <i class="fa fa-map-pin pr-2" aria-hidden="true"></i>
-      <div class="pl-2">
-        <h3>Location</h3>
-        <p><%= @ship.location %></p>
-      </div>
-    </div>
-
-    <div class="destination d-flex">
-      <i class="fa fa-location-arrow" aria-hidden="true"></i>
-      <div class="pl-2">
-        <h3>Destination</h3>
-        <p><%= @ship.destination %></p>
-      </div>
-    </div>
-
-    <div class="d-flex">
-      <i class="fa fa-id-card" aria-hidden="true"></i>
-      <div class="pl-2">
-        <h3>Price</h3>
-        <p>USD <%= @ship.price %></p>
-      </div>
-    </div>
+  
+      <!-- map -->
+    <div id="show-map"
+      style="width: 100%; height: auto;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>  
   </div>
-
-   <!-- add mapbox to index page -->
+   <!-- add mapbox to show page -->
    <%= content_for(:js_before_body) do %>
     <%= javascript_pack_tag 'mapbox' %>
   <% end %>
