@@ -58,4 +58,13 @@
       </div>
     </div>
   </div>
+  <%= simple_form_for([ @ship, @review ], remote: true) do |f| %>
+  <%= f.label :Reviews%>
+  <%= f.input :content, as: :text, label: false%>
+  <%= f.button :submit %>
+  <% end %>
 </div>
+
+
+
+
