@@ -7,7 +7,9 @@ class ShipsController < ApplicationController
     @markers = @ships.map do |ship|
       {
         lat: ship.latitude,
-        lng: ship.longitude
+        lng: ship.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { ship: ship }),
+        image_url: helpers.asset_url('pin.png')
       }
     end
   end

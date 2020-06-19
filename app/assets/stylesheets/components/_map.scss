@@ -1,0 +1,26 @@
+.content {
+  display: flex;
+}
+
+#cards {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+  padding: 16px;
+}
+  
+#map {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  // text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
