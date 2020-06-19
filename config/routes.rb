@@ -7,6 +7,6 @@ Rails.application.routes.draw do
      get "my_ships"
     end
   resources :bookings, only: [:index, :create]
-  resources :reviews, only: [:create, :index, :show]
+  resources :reviews, only: [:create]
   end
 end
