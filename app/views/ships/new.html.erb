@@ -1,16 +1,1 @@
-<div class="container pt-5 col-md-5 form">
-  <h2 class="text-center">Add a New Ship</h2>
-
-  <%= simple_form_for @ship do |f| %>
-    <%= f.input :name %>
-    <%= f.input :photo, as: :file %>
-    <%= f.input :capacity %>
-    <%= f.input :location %>
-    <%= f.input :destination %>
-    <%= f.input :description %>
-
-    <div class="form-actions">
-      <%= f.button :submit, "Create ship", class: "text-white" %>
-    </div>
-  <% end %>
-</div>
+<%= render "shared/ship_new_update" %>

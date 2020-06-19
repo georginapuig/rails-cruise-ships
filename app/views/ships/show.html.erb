@@ -66,9 +66,35 @@
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>  
+    
+    <!-- add mapbox to show page -->
+    <%= content_for(:js_before_body) do %>
+      <%= javascript_pack_tag 'mapbox' %>
+    <% end %>
   </div>
-   <!-- add mapbox to show page -->
-   <%= content_for(:js_before_body) do %>
-    <%= javascript_pack_tag 'mapbox' %>
-  <% end %>
+
+    <%= simple_form_for([ @ship, @review ], remote: true) do |f| %>
+       <%= f.label :Reviews, class: "h3"%>
+       <%= f.input :rating, collection: 1..5 %>
+       <%= f.input :content, as: :text, label: :Review%>
+       <%= f.button :submit, "Submit a review", class: "form-actions" %>
+
+    <% end %>
+    <h3>
+        <%= pluralize @ship.reviews.size, "review" %>
+    </h3>
+
+    <div id="reviews">
+       <% if @ship.reviews.blank? %>
+          Be the first to leave a review for <%= @ship.name %>
+       <% else %>
+          <% @ship.reviews.each do |review| %>
+            <p id="review-<%= review.id %>"><%= review.content %></p>
+          <% end %>
+       <% end %>
+    </div>
 </div>
+
+
+
+

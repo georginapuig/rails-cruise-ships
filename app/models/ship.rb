@@ -14,4 +14,6 @@ class Ship < ApplicationRecord
 
   has_one_attached :photo
   has_one :booking, dependent: :destroy
+
+  has_many :reviews, dependent: :destroy
 end
