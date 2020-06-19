@@ -58,11 +58,24 @@
       </div>
     </div>
   </div>
-  <%= simple_form_for([ @ship, @review ], remote: true) do |f| %>
-  <%= f.label :Reviews%>
-  <%= f.input :content, as: :text, label: false%>
-  <%= f.button :submit %>
-  <% end %>
+    <%= simple_form_for([ @ship, @review ], remote: true) do |f| %>
+       <%= f.label :Reviews%>
+       <%= f.input :content, as: :text, label: false%>
+       <%= f.button :submit, "Submit a review", class: "form-actions" %>
+    <% end %>
+    <h2>
+  <%= pluralize @ship.reviews.size, "review" %>
+    </h2>
+
+    <div id="reviews">
+       <% if @ship.reviews.blank? %>
+          Be the first to leave a review for <%= @ship.name %>
+       <% else %>
+          <% @ship.reviews.each do |review| %>
+            <p><%= review.content %></p>
+          <% end %>
+       <% end %>
+    </div>
 </div>
 
 
