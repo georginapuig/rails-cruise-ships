@@ -7,11 +7,16 @@
     <p class="p-header text-white"><%= @ship.location %></p>
 
     <!-- card -->
-    <div class="card-product card-banner">
-      <div class="text-center">
-        <%= render "shared/new_booking" %>
+    <% if @ship.user != current_user %>
+      <div class="card-product card-banner">
+        <div class="text-center">
+          <%= render "shared/new_booking" %>
+        </div>
       </div>
-    </div>
+    <% else %>
+      <%= link_to "Edit", edit_ship_path(@ship), class:"form-actions" %>
+      <%= link_to "Delete", ship_path(@ship), class:"form-actions", method: :delete %>
+    <% end %>
   </div>
 </div>
 
