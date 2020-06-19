@@ -9,7 +9,7 @@ class ShipsController < ApplicationController
         lat: ship.latitude,
         lng: ship.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { ship: ship }),
-        image_url: helpers.asset_url('location-pointer.png')
+        image_url: helpers.asset_url('pin.png')
       }
     end
   end
