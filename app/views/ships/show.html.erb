@@ -58,4 +58,9 @@
       </div>
     </div>
   </div>
+
+   <!-- add mapbox to index page -->
+   <%= content_for(:js_before_body) do %>
+    <%= javascript_pack_tag 'mapbox' %>
+  <% end %>
 </div>

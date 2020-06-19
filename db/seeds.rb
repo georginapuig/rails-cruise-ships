@@ -45,5 +45,5 @@ photos = [
 		)
 
 	file = URI.open(photos.sample)
-	ship.photo.attach(io: file, filename: 'nes.png')
+	ship.photo.attach(io: file, filename: "#{ship.name}")
 end
