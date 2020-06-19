@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_18_180426) do
+ActiveRecord::Schema.define(version: 2020_06_19_141347) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,15 @@ ActiveRecord::Schema.define(version: 2020_06_18_180426) do
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.text "content"
+    t.integer "rating"
+    t.bigint "ship_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["ship_id"], name: "index_reviews_on_ship_id"
+  end
+
   create_table "ships", force: :cascade do |t|
     t.string "name"
     t.integer "capacity"
@@ -56,9 +65,9 @@ ActiveRecord::Schema.define(version: 2020_06_18_180426) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "location"
+    t.integer "price"
     t.float "latitude"
     t.float "longitude"
-    t.integer "price"
     t.index ["user_id"], name: "index_ships_on_user_id"
   end
 
@@ -77,5 +86,6 @@ ActiveRecord::Schema.define(version: 2020_06_18_180426) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookings", "ships"
   add_foreign_key "bookings", "users"
+  add_foreign_key "reviews", "ships"
   add_foreign_key "ships", "users"
 end
