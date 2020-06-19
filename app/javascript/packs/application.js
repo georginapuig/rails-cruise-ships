@@ -26,6 +26,12 @@ require("channels");
 import "bootstrap";
 import { initAutocomplete } from '../plugins/init_autocomplete';
 
+// import { initMapbox } from '../plugins/init_mapbox';
+// import { initMapboxShow } from '../plugins/init_mapbox';
+
+// initMapbox();
+// initMapboxShow();
+
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 

@@ -38,6 +38,16 @@ class ShipsController < ApplicationController
 
   def show
     @booking = Booking.new
+    @ships = [@ship]
+
+    @markers = @ships.map do |ship|
+      {
+        lat: ship.latitude,
+        lng: ship.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { ship: ship }),
+        image_url: helpers.asset_url('pin.png')
+      }
+    end
   end
 
   def destroy
