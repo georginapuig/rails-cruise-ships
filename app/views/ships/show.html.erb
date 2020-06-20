@@ -108,7 +108,10 @@
           Be the first to leave a review for <%= @ship.name %>
         <% else %>
           <% @ship.reviews.each do |review| %>
-            <p class="review" id="review-<%= review.id %>"><%= review.content %></p>
+            <div class="d-flex review">
+              <p class="mb-0" id="review-<%= review.id %>"><%= review.content %></p>
+              <p class="mb-0" id="review-<%= review.id %>"><%= review.rating %></p>
+            </div>
           <% end %>
         <% end %>
     </div>
