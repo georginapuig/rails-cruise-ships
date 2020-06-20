@@ -24,17 +24,17 @@
 <div class="container pt-4 pb-5">
   <h2 class="pt-5 pb-2">Ship characteristics</h2>
   <hr>
+  <!-- description -->
+  <div class="description d-flex">
+    <i class="fa fa-info-circle" aria-hidden="true"></i>
+    <div class="pl-2">
+      <h3>Description</h3>
+      <p><%= @ship.description %></p>
+    </div>
+  </div>
   <div class="d-flex mb-5">
     <div class="params pt-2">
-      <!-- descroption -->
-      <div class="d-flex">
-        <i class="fa fa-info-circle" aria-hidden="true"></i>
-        <div class="pl-2">
-          <h3>Description</h3>
-          <p><%= @ship.description %></p>
-        </div>
-      </div>
-  
+      <!-- ship capacity -->
       <div class="d-flex">
         <i class="fa fa-users" aria-hidden="true"></i>
         <div class="pl-2">
