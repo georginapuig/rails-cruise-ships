@@ -14,8 +14,8 @@
         </div>
       </div>
     <% else %>
-      <%= link_to "Edit", edit_ship_path(@ship), class:"form-actions" %>
-      <%= link_to "Delete", ship_path(@ship), class:"form-actions", method: :delete %>
+      <%= link_to "Edit", edit_ship_path(@ship), class:"form-actions btn-edit" %>
+      <%= link_to "Delete", ship_path(@ship), class:"form-actions btn-delete", method: :delete %>
     <% end %>
   </div>
 </div>
