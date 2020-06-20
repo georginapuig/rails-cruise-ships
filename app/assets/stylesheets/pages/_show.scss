@@ -56,7 +56,11 @@ i {
 }
 
 #reviews {
+  padding-right: 0;
+}
+
+.review {
   background-color: white;
-  border-radius: 2px;
-  padding: 20px;
+  border-radius: 4px;
+  padding: 13px;
 }
