@@ -110,7 +110,7 @@
           <% @ship.reviews.each do |review| %>
             <div class="d-flex review">
               <p class="mb-0" id="review-<%= review.id %>"><%= review.content %></p>
-              <p class="mb-0" id="review-<%= review.id %>"><%= review.rating %></p>
+              <p class="mb-0" id="review-<%= review.id %>"> <%= "⭐" * review.rating %></p>
             </div>
           <% end %>
         <% end %>
