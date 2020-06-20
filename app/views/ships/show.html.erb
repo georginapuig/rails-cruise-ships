@@ -21,7 +21,7 @@
 </div>
 
 <!-- ship info -->
-<div class="container pt-4 pb-5">
+<div class="container pt-4 pb-4">
   <h2 class="pt-5 pb-2">Ship characteristics</h2>
   <hr>
   <!-- description -->
@@ -93,17 +93,17 @@
   </div>
 
   <hr>
-
-  <div class="d-flex">
-    <div class="col-6 pl-0">
+  
+  <div class="reviews-block">
+    <div class="col-6 pl-0 review-form">
       <%= simple_form_for([ @ship, @review ], remote: true) do |f| %>
-         <%= f.input :rating, collection: 1..5 %>
-         <%= f.input :content, as: :text, label: :Review, class: "label-form" %>
-         <%= f.button :submit, "Submit a review", class: "form-actions show-submit-botton" %>
+          <%= f.input :rating, collection: 1..5 %>
+          <%= f.input :content, as: :text, label: :Review, class: "label-form" %>
+          <%= f.button :submit, "Submit a review", class: "form-actions show-submit-botton" %>
       <% end %>
     </div>
   
-    <div class="col-6" id="reviews">
+    <div class="col-6 pr-0" id="reviews">
         <% if @ship.reviews.blank? %>
           Be the first to leave a review for <%= @ship.name %>
         <% else %>

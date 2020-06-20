@@ -55,8 +55,23 @@ i {
   font-size: 19px;
 }
 
+.reviews-block {
+  display: flex;
+  height: 258px;
+}
+
+.review-form {
+  position: sticky;
+  top: 0;
+}
+
 #reviews {
-  padding-right: 0;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+#reviews::-webkit-scrollbar {
+  display: none;
 }
 
 .review {

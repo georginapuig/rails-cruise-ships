@@ -1,6 +1,6 @@
-<div class="content  pb-5">
+<div class="content">
   <!-- <h2>Choose your party boat!</h2> -->
-  <div class="" id="cards">
+  <div id="cards">
     <% @ships.each do |ship| %>
       <%= link_to ship_path(ship) do %>
         <div class="card-trip" id="card-show">
@@ -24,7 +24,7 @@
 
   <!-- map -->
   <div id="map"
-    style="width: 100%; height: 600px;"
+    style="width: 100%;"
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
