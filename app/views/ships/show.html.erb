@@ -14,26 +14,28 @@
         </div>
       </div>
     <% else %>
-      <%= link_to "Edit", edit_ship_path(@ship), class:"form-actions" %>
-      <%= link_to "Delete", ship_path(@ship), class:"form-actions", method: :delete %>
+      <%= link_to "Edit", edit_ship_path(@ship), class:"form-actions btn-edit" %>
+      <%= link_to "Delete", ship_path(@ship), class:"form-actions btn-delete", method: :delete %>
     <% end %>
   </div>
 </div>
 
+<!-- ship info -->
 <div class="container pt-4 pb-5">
   <h2 class="pt-5 pb-2">Ship characteristics</h2>
   <hr>
+  <!-- description -->
+  <div class="description d-flex">
+    <i class="fa fa-info-circle" aria-hidden="true"></i>
+    <div class="pl-2">
+      <h3>Description</h3>
+      <p><%= @ship.description %></p>
+    </div>
+  </div>
   <div class="d-flex mb-5">
     <div class="params pt-2">
-      <div class="description d-flex">
-        <i class="fa fa-info-circle" aria-hidden="true"></i>
-        <div class="pl-2">
-          <h3>Description</h3>
-          <p><%= @ship.description %></p>
-        </div>
-      </div>
-  
-      <div class="capacity d-flex">
+      <!-- ship capacity -->
+      <div class="d-flex">
         <i class="fa fa-users" aria-hidden="true"></i>
         <div class="pl-2">
           <h3>Capacity</h3>
@@ -41,7 +43,8 @@
         </div>
       </div>
   
-      <div class="location d-flex">
+      <!-- location -->
+      <div class="d-flex">
         <i class="fa fa-map-pin pr-2" aria-hidden="true"></i>
         <div class="pl-2">
           <h3>Location</h3>
@@ -49,7 +52,8 @@
         </div>
       </div>
   
-      <div class="destination d-flex">
+      <!-- destination -->
+      <div class="d-flex">
         <i class="fa fa-location-arrow" aria-hidden="true"></i>
         <div class="pl-2">
           <h3>Destination</h3>
@@ -57,6 +61,7 @@
         </div>
       </div>
   
+      <!-- price -->
       <div class="d-flex">
         <i class="fa fa-id-card" aria-hidden="true"></i>
         <div class="pl-2">
@@ -66,7 +71,7 @@
       </div>
     </div>
   
-      <!-- map -->
+    <!-- map -->
     <div id="show-map"
       style="width: 100%; height: auto;"
       data-markers="<%= @markers.to_json %>"
@@ -79,6 +84,7 @@
     <% end %>
   </div>
 
+  <!-- reviews -->
   <div class="d-flex reviews-header">
     <h3 class="reviews h3">Reviews</h3>
     <h3 class="reviews-count">
@@ -89,7 +95,6 @@
   <hr>
 
   <div class="d-flex">
-
     <div class="col-6 pl-0">
       <%= simple_form_for([ @ship, @review ], remote: true) do |f| %>
          <%= f.input :rating, collection: 1..5 %>
