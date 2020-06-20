@@ -54,3 +54,28 @@ i {
 .reviews-count {
   font-size: 19px;
 }
+
+.reviews-block {
+  display: flex;
+  height: 258px;
+}
+
+.review-form {
+  position: sticky;
+  top: 0;
+}
+
+#reviews {
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+#reviews::-webkit-scrollbar {
+  display: none;
+}
+
+.review {
+  background-color: white;
+  border-radius: 4px;
+  padding: 13px;
+}
