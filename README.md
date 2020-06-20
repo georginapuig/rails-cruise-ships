@@ -15,8 +15,8 @@
 
 ### First download instructions :fire:
 ```
-Run bundle install on the first download
-Run yarn install to download webpack packages (if any)
+Run bundle install
+Run yarn install
 Run rails db:create
 Run rails db:migrate
 ```
